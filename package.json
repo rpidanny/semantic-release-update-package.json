@@ -1,6 +1,6 @@
 {
-  "name": "@rpidanny/typescript-package-template",
-  "version": "1.4.0",
+  "name": "@rpidanny/semantic-release-update-package.json",
+  "version": "0.0.0",
   "description": "Typescript package boilerplate template",
   "main": "dist/index.js",
   "types": "dist/index.d.js",
