@@ -1,5 +1,8 @@
-const echo = (msg: string): string => {
-  return msg
-}
+import { IPluginConfig } from './interfaces'
+import { verifyConfig } from './verify-config'
 
-export default echo
+export * from './prepare'
+
+export async function verifyConditions(pluginConfig: IPluginConfig): Promise<void> {
+  verifyConfig(pluginConfig)
+}

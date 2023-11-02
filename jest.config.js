@@ -3,13 +3,19 @@ const baseConfig = require('./jest-base')
 module.exports = {
   ...baseConfig,
   rootDir: '.',
-  roots: ['<rootDir>/test'],
+  roots: ['<rootDir>/'],
   testMatch: ['**/?(*.)+(spec|test).+(ts|tsx|js)'],
   testPathIgnorePatterns: ['<rootDir>/src/__mocks__/*'],
   setupFilesAfterEnv: ['./test/setup-test.js'],
   cacheDirectory: '<rootDir>/.cache/unit',
   collectCoverage: true,
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!**/node_modules/**', '!**/vendor/**'],
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.ts',
+    '!**/node_modules/**',
+    '!**/vendor/**',
+    '!<rootDir>/src/index.ts',
+    '!<rootDir>/src/interfaces.ts',
+  ],
   coverageDirectory: '<rootDir>/coverage',
   coverageReporters: [['lcov', { projectRoot: './' }], 'text'],
   coverageThreshold: {
