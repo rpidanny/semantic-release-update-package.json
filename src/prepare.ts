@@ -11,21 +11,21 @@ export const prepare = async (
 
   const fillPath = path.resolve(cwd, packageJsonPath)
 
-  if (version) {
-    try {
-      await fsp.access(fillPath, fs.constants.F_OK)
+  if (!version) return
 
-      const packageJson = await fsp.readFile(fillPath, 'utf-8')
+  try {
+    await fsp.access(fillPath, fs.constants.F_OK)
 
-      const packageJsonObj = JSON.parse(packageJson)
+    const packageJson = await fsp.readFile(fillPath, 'utf-8')
 
-      packageJsonObj.version = version
+    const packageJsonObj = JSON.parse(packageJson)
 
-      await fsp.writeFile(fillPath, JSON.stringify(packageJsonObj, null, 2))
-      logger.log(`Updated package.json version to ${version}`)
-    } catch (err) {
-      logger.log(`Failed to update package.json: ${(err as Error).message}`)
-      throw err
-    }
+    packageJsonObj.version = version
+
+    await fsp.writeFile(fillPath, JSON.stringify(packageJsonObj, null, 2))
+    logger.log(`Updated package.json version to ${version}`)
+  } catch (err) {
+    logger.log(`Failed to update package.json: ${(err as Error).message}`)
+    throw err
   }
 }
