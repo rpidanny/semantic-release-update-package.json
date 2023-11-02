@@ -13,7 +13,7 @@ export interface IConfig {
 export interface IPluginConfig extends IPluginBaseConfig, IConfig {}
 
 export interface INextRelease {
-  version: string
+  version?: string
 }
 
 export interface ILogger {

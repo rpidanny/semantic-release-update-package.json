@@ -1,5 +1,7 @@
 # semantic-release-update-package.json
 
+[![codecov](https://codecov.io/gh/rpidanny/semantic-release-update-package.json/graph/badge.svg?token=VOAyVWHLzq)](https://codecov.io/gh/rpidanny/semantic-release-update-package.json)
+
 [**semantic-release**](https://github.com/semantic-release/semantic-release) plugin that updates `package.json` with the new release version.
 
 This tool is especially useful when using [semantic-release-plus](https://github.com/semantic-release-plus/semantic-release-plus) with mono-repo frameworks like [nx](https://nx.dev/).

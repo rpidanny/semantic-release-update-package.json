@@ -5,12 +5,10 @@
     "removeComments": true,
     "isolatedModules": true,
     "declaration": true,
-    // "target": "ES2019",
-    // "sourceMap": true,
-    // "outDir": "./dist",
-    // "rootDirs": ["./", "./src"],
-    // "typeRoots": ["./types", "./@types", "node_modules/@types"],
-    // "types": ["node", "jest"],
+    "target": "ES2019",
+    "sourceMap": true,
+    "rootDirs": ["src", "./"],
+    "outDir": "./dist",
 
     "strict": true,
     "noImplicitAny": true,
@@ -39,12 +37,13 @@
     "preserveConstEnums": true,
     "incremental": true
   },
-  "include": ["src"],
+  "include": ["src", "test/unit/prepare.spec.ts", "test/unit/verify-config.spec.ts"],
   "exclude": [
     "node_modules",
     "./node_modules",
     "./node_modules/*",
     "./node_modules/@types/node/index.d.ts",
-    "coverage"
+    "coverage",
+    "**/*.spec.ts"
   ]
 }

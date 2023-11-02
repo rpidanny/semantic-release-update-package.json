@@ -72,4 +72,16 @@ describe('prepare', () => {
       'Failed to update package.json: Error updating package.json',
     )
   })
+
+  it('should skip updating package.json if version in nextRelease doesnt exist', async () => {
+    const pluginContext: IPluginContext = getMockPluginContext({
+      nextRelease: {},
+    })
+
+    await prepare(mockPluginConfig, pluginContext)
+
+    expect(fs.promises.access).not.toHaveBeenCalled()
+    expect(fsp.readFile).not.toHaveBeenCalled()
+    expect(fsp.writeFile).not.toHaveBeenCalled()
+  })
 })
