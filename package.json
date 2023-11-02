@@ -1,6 +1,6 @@
 {
   "name": "@rpidanny/semantic-release-update-package.json",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Semantic Release plugin to update package.json version",
   "main": "dist/index.js",
   "types": "dist/index.d.js",
